@@ -1,29 +1,40 @@
-# Pruning Tools
-## 本工程是`Moffett AI`开发的神经网络剪枝工具
-使用剪枝优化器在深度神经网络模型训练过程对其进行剪枝，达到大幅降低运算量从而加速推理的目的。
+# Pruning Tools by Moffett AI
+**<font size='3'>This repo provides a wide spectrum of tools for neural network pruning in major deep learning platforms, including pytorch and mxnet.**
 
-**剪枝工具使用很方便:**
-* 用户可将已有训练代码的optimizer直接替换为本工程的提供的优化器，从而直接压缩模型，而几乎不需要修改其他代码。例如：
-    ```key
-    # 在训练循环之前，需要创建一个dict，dict的key是需要压缩的参数的名称，value是该参数对应的需要压缩的比例，然后初始化压缩器。
-    prune_dict = {}
+**<font size='3'>Two modes for using the pruning tools by Moffett AI:<font>**
+
+1. Prune dense networks
+
+In order to prune their neural networks, users only need to add a few lines of codes to setup the pruning configurations and initialize the pruning process. For example:
+
+
+    # use a dictionary to setup pruning configuration
+        prune_dict = {}
     for k, v in model.named_parameters():
         prune_dict[k] = 0.95
-    prune = Prune(model, step * 0, step * 8, 10, prune_dict)
+    # define the
+    prune = Prune(
+        model = model,
+        pretrian_step = 0,
+        sparse_step = step * 8,
+        frequency = 100,
+        prune_dict = prune_dict
+        balance = 'fix')
 
     for idx in range(epoch):
         # your training code here
         ......
         optimizer.step()
-        # 在执行更新梯度操作后，调用以下函数
+        # prune a step
         prune.prune()
         ......
 
-    # 如果希望查看dict中指定的参数当前的压缩率是多少，可以调用这个函数，它会输出每个参数当前的压缩率，已经整体的压缩率。
+    # check the sparsities of each layers during pruning
     layer_sparse_rate, total_sparse_rate = prune.sparsity()
-    ```
 
-* 也可将模型替换成我们提供的稀疏化预训练模型，在用户数据上保持稀疏率的前提下进行finetune。
+* 2. Finetune the sparse networks on users' own datasets
+
+Users can also use the sparse networks provided by Moffett AI to finetune on their own dataset, while the sparsity is kept.
 
 **本压缩工具的优势**
 

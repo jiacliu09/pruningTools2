@@ -1,5 +1,5 @@
-### mxnet_pruning文档：
-#### class Prune
+### mxnet_pruning document：
+### class Prune
 ###
 ```
 function `__init__(model, pretrain_step=0, sparse_step=0, frequency=100, prune_dict={}, restore_sparsity=False, fix_sparsity=False, balance='fix', prune_device='default')`

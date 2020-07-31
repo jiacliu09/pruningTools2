@@ -25,7 +25,7 @@ In order to prune their neural networks, users only need to add a few lines of c
         # your training code here
         ......
         optimizer.step()
-        # prune a step
+        # prune one step
         prune.prune()
         ......
 

@@ -39,14 +39,12 @@ Users can also use the sparse networks provided by Moffett AI to finetune on the
 **Notes**
 Our pruning tools incorporate the option for Bank-Balanced Sparsity (BBS), which is a noval sparsity pattern that can maintain model accuracy at a high sparsity level while still enable an efficient FPGA/ASIC implementation.
 
-
-以下是balance参数的示意图
-
-![balance](./bbs2.jpg)
+The concept of BBS is shown below:
+![balance](./balance.npg)
 
 
 
-**本工程包含以下内容:**
+**<font size='3'>This repo includes the following contents:</font>**
 1. pruning_tools文件夹包含不同框架的稀疏优化器。目前包含：
     * [x] pytorch_pruning.Prune
 
@@ -65,9 +63,9 @@ Our pruning tools incorporate the option for Bank-Balanced Sparsity (BBS), which
 ---
 我们同时提供一些已经稀疏化的预训练模型供使用，模型的稀疏率和性能见下表。模型数量会逐渐增加。目前仅提供模型，训练代码稍后也会提供。
 
-[百度网盘点此下载，提取码：6ssv](https://pan.baidu.com/s/1J28WwmaYyhqSK4CWEnTLoA)
+[Baidu drive，code：6ssv](https://pan.baidu.com/s/1J28WwmaYyhqSK4CWEnTLoA)
 
-|模型|框架|训练数据集|稀疏率|准确率|说明|
+|model|framework|training dataset|sparsity|top1|notes|
 |-|-|-|-|-|-|
-|resnet50_v1b|mxnet|imagenet|-|77.67|gluoncv提供的预训练模型|
-|resnet50_v1b|mxnet|imagenet|93.75%|74.0|基于gluoncv的预训练模型进行压缩，下同|
+|resnet50_v1b|mxnet|imagenet|-|77.67|from gluoncv|
+|resnet50_v1b|mxnet|imagenet|93.75%|74.0|pretrain model from gluoncv|

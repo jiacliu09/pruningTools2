@@ -70,5 +70,5 @@ We provide some sparse networks for users to finetune on their own datasets. Mor
 
 |model|framework|training dataset|sparsity|top1|notes|
 |-|-|-|-|-|-|
-|resnet50_v1b|mxnet|imagenet|-|77.67|from gluoncv|
+|resnet50_v1b|mxnet|imagenet|0|77.67|from gluoncv|
 |resnet50_v1b|mxnet|imagenet|93.75%|74.0|pretrain model from gluoncv|

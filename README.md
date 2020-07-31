@@ -57,12 +57,12 @@ Detailed documents for pruning optimizers:
 
 [doc for mxnet pruning tools](./docs/mxnet_parameters.md)
 
-2. Examples of using pruning optimizers on mnist dataset:
+#### 2. Examples of using pruning optimizers on mnist dataset:
     [x] mxnet_pruning_mnist.py
     [x] pytorch_pruning_mnist.py
 
 ---
-**<font size='3'>4. Moffett AI model zoo </font>**
+### 3. Moffett AI model zoo
 
 We provide some sparse networks for users to finetune on their own datasets. More sparse networks will be constantly provided in this repo.
 

@@ -57,6 +57,7 @@ Detailed documents for pruning optimizers:
 
 [doc for mxnet pruning tools](./docs/mxnet_parameters.md)
 
+
 #### 2. Examples of using pruning optimizers on mnist dataset:
     [x] mxnet_pruning_mnist.py
     [x] pytorch_pruning_mnist.py

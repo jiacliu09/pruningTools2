@@ -36,15 +36,13 @@ In order to prune their neural networks, users only need to add a few lines of c
 
 Users can also use the sparse networks provided by Moffett AI to finetune on their own dataset, while the sparsity is kept.
 
-**本压缩工具的优势**
+**Notes**
+Our pruning tools incorporate the option for Bank-Balanced Sparsity (BBS), which is a noval sparsity pattern that can maintain model accuracy at a high sparsity level while still enable an efficient FPGA/ASIC implementation.
 
-    常见的压缩算法工具包只考虑压缩算法研究，训练出的模型只具有理论加速能力，在实际的硬件上运行往往无法加速或者达不到理想加速能力。与这些常见的压缩工具不同，我们的压缩工具是针对Moffett的硬件而专门产生的，可以达到理论加速能力。
-
-    在初始化压缩器的参数中，balance这个参数就是控制是否要匹配Moffett硬件来压缩。如果设置balance=True，那么压缩出的模型在Moffett的硬件上具有理想加速能力；如果设置balance=False，那么与其他常见压缩工具一样，只具有理论加速效果，在常见硬件中无法加速。
 
 以下是balance参数的示意图
 
-![balance](./balance.png)
+![balance](./bbs2.jpg)
 
 
 

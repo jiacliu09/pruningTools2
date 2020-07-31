@@ -3,7 +3,7 @@
 
 **<font size='3'>Two modes for using the pruning tools by Moffett AI:<font>**
 
-1. Prune dense networks
+### 1. Prune dense networks
 
 In order to prune their neural networks, users only need to add a few lines of codes to setup the pruning configurations and initialize the pruning process. For example:
 
@@ -32,7 +32,7 @@ In order to prune their neural networks, users only need to add a few lines of c
     # check the sparsities of each layers during pruning
     layer_sparse_rate, total_sparse_rate = prune.sparsity()
 
-* 2. Finetune the sparse networks on users' own datasets
+### 2. Finetune the sparse networks on users' own datasets
 
 Users can also use the sparse networks provided by Moffett AI to finetune on their own dataset, while the sparsity is kept.
 

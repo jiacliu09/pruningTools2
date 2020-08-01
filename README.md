@@ -13,8 +13,8 @@ In order to prune their neural networks, users only need to add a few lines of c
     # define the pruning specs
     prune = Prune(
         model = model,
-        pretrain_step = 0,
-        sparse_step = step * 8,
+        pretrain_step = 0, # this is set to 0 if pretrained model is loaded, otherwise this is the training steps for a dense model
+        sparse_step = 20000,
         frequency = 100,
         prune_dict = prune_dict
         balance = 'fix')
@@ -45,9 +45,9 @@ The concept of bank balanced sparsity is to prune the weight tensors in a way th
 
 #### 1. pruning tools used in pytorch and mxnet：
 
-    [x] pytorch_pruning.Prune
+    [x] pruning_tools/mxnet_pruning.so
 
-    [x] mxnet_pruning.Prune
+    [x] pruning_tools/pytorch_pruning.so
 
 Detailed documents for pruning optimizers:
 
@@ -57,8 +57,8 @@ Detailed documents for pruning optimizers:
 
 
 #### 2. Examples of using pruning optimizers on mnist dataset:
-    [x] mxnet_pruning_mnist.py
-    [x] pytorch_pruning_mnist.py
+    [x] example/mxnet_pruning_mnist.py
+    [x] example/pytorch_pruning_mnist.py
 
 ---
 ### 3. An example of pruning results

@@ -64,6 +64,9 @@ Detailed documents for pruning optimizers:
 ### 3. An example of pruning results
 Here is the pruning results for resnet50_v1b on imagenet dataset
 
-|model|framework|training dataset|sparsity|top1|notes|
+|model|framework|training dataset|sparsity|top1|
 |-|-|-|-|-|-|
-|resnet50_v1d|mxnet|imagenet|93.75%|74.9|pretrain model from gluoncv|
+|simple cnn|mxnet|mnist|0%|98.9%|
+|simple cnn|mxnet|mnist|90.0%|98.8%|
+|simple cnn|pytorch|mnist|0%|98.6%|
+|simple cnn|pytorch|mnist|90.0%|98.9%|
